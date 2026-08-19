@@ -5,10 +5,7 @@ import torch
 
 from model import GPT, GPTConfig
 
-if os.environ.get("KAGGLE_KERNEL_RUN_TYPE") or os.path.isdir("/kaggle/working"):
-    CHECKPOINT_PATH = "/kaggle/working/checkpoint.pt"
-else:
-    CHECKPOINT_PATH = os.path.join(os.path.dirname(__file__), "checkpoint.pt")
+CHECKPOINT_PATH = os.path.join(os.path.dirname(__file__), "checkpoint.pt")
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
